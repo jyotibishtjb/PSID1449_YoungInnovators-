@@ -1,6 +1,6 @@
 Certainly! I've replaced the GPT-related content with a section on scraping through a web scraper.
 
-```markdown
+markdown
 # Software Bill of Materials (SBOM) Generation Tool
 
 ## Introduction
