@@ -1,0 +1,82 @@
+{
+  "SoftwareBillOfMaterials": [
+    {
+      "component": "YetiForceCRM",
+      "version": "6.5",
+      "license": "YetiForce Public License 6.5",
+      "cpe": "cpe:/a:YetiForce:YetiForceCRM:6.5",
+      "vulnerability": [],
+      "priority": "High",
+      "dependencies": [
+        {
+          "library": "@fortawesome/fontawesome-free",
+          "version": "^6.1"
+        },
+        {
+          "library": "@mdi/font",
+          "version": "^7.0"
+        },
+        {
+          "library": "add",
+          "version": "^2.0.6"
+        },
+        {
+          "library": "animate.css",
+          "version": "^4.0"
+        },
+        {
+          "library": "block-ui",
+          "version": "^2.70.1"
+        },
+        {
+          "library": "blueimp-file-upload",
+          "version": "^10.6.0"
+        },
+        {
+          "library": "bootstrap",
+          "version": "^4.3.1"
+        },
+        {
+          "library": "bootstrap-datepicker",
+          "version": "^1.9.0"
+        },
+        {
+          "library": "bootstrap-daterangepicker",
+          "version": "^3.0.4"
+        },
+        {
+          "library": "bootstrap-tabdrop",
+          "version": "latest"
+        },
+        {
+          "library": "chart.js",
+          "version": "^2.9.4"
+        },
+        {
+          "library": "chartjs-plugin-datalabels",
+          "version": "^1.0.0"
+        },
+        {
+          "library": "chartjs-plugin-funnel",
+          "version": "^1.1.5"
+        },
+        {
+          "library": "clipboard",
+          "version": ">=2.0.0"
+        },
+        {
+          "library": "clockpicker",
+          "version": "latest"
+        },
+        {
+          "library": "css-element-queries",
+          "version": "^1.2.3"
+        },
+        {
+          "library": "datatables.net",
+          "version": "^1.11.3"
+        }
+      ]
+    }
+  ]
+}

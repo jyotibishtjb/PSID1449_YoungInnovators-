@@ -1,0 +1,179 @@
+ [
+    {
+      "CVE_ID": "CVE-2021-43802",
+      "Description": "Etherpad is a real-time collaborative editor. In versions prior to 1.8.16, an attacker can craft an `*.etherpad` file that, when imported, might allow the attacker to gain admin privileges for the Etherpad instance. This, in turn, can be used to install a malicious Etherpad plugin that can execute arbitrary code (including system commands). To gain privileges, the attacker must be able to trigger deletion of `express-session` state or wait for old `express-session` state to be cleaned up. Core Etherpad does not delete any `express-session` state, so the only known attacks require either a plugin that can delete session state or a custom cleanup process (such as a cron job that deletes old `sessionstorage:*` records). The problem has been fixed in version 1.8.16. If users cannot upgrade to 1.8.16 or install patches manually, several workarounds are available. Users may configure their reverse proxies to reject requests to `/p/*/import`, which will block all imports, not just `*.etherpad` imports; limit all users to read-only access; and/or prevent the reuse of `express_sid` cookie values that refer to deleted express-session state. More detailed information and general mitigation strategies may be found in the GitHub Security Advisory.",
+      "Published_Date": "2021-12-09T23:15Z",
+      "Last_Modified_Date": "2023-08-31T16:19Z",
+      "CVSS_Base_Score": 8.8,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "Exploitability_Score": 2.8,
+      "Impact_Score": 5.9
+    },
+    {
+      "CVE_ID": "CVE-2021-34816",
+      "Description": "An Argument Injection issue in the plugin management of Etherpad 1.8.13 allows privileged users to execute arbitrary code on the server by installing plugins from an attacker-controlled source.",
+      "Published_Date": "2021-07-21T18:15Z",
+      "Last_Modified_Date": "2021-07-30T15:22Z",
+      "CVSS_Base_Score": 7.2,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "Exploitability_Score": 1.2,
+      "Impact_Score": 5.9
+    },
+    {
+      "CVE_ID": "CVE-2021-34817",
+      "Description": "A Cross-Site Scripting (XSS) issue in the chat component of Etherpad 1.8.13 allows remote attackers to inject arbitrary JavaScript or HTML by importing a crafted pad.",
+      "Published_Date": "2021-07-19T14:15Z",
+      "Last_Modified_Date": "2021-07-27T18:14Z",
+      "CVSS_Base_Score": 6.1,
+      "CVSS_Severity": "MEDIUM",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "Exploitability_Score": 2.8,
+      "Impact_Score": 2.7
+    },
+    {
+      "CVE_ID": "CVE-2020-22781",
+      "Description": "In Etherpad < 1.8.3, a specially crafted URI would raise an unhandled exception in the cache mechanism and cause a denial of service (crash the instance).",
+      "Published_Date": "2021-04-28T21:15Z",
+      "Last_Modified_Date": "2021-05-05T20:19Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2020-22782",
+      "Description": "Etherpad < 1.8.3 is affected by a denial of service in the import functionality. Upload of binary file to the import endpoint would crash the instance.",
+      "Published_Date": "2021-04-28T21:15Z",
+      "Last_Modified_Date": "2021-05-05T20:07Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2020-22783",
+      "Description": "Etherpad <1.8.3 stored passwords used by users insecurely in the database and in log files. This affects every database backend supported by Etherpad.",
+      "Published_Date": "2021-04-28T21:15Z",
+      "Last_Modified_Date": "2021-05-05T19:58Z",
+      "CVSS_Base_Score": 6.5,
+      "CVSS_Severity": "MEDIUM",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 2.8,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2020-22785",
+      "Description": "Etherpad < 1.8.3 is affected by a missing lock check which could cause a denial of service. Aggressively targeting random pad import endpoints with empty data would flatten all pads due to lack of rate limiting and missing ownership check.",
+      "Published_Date": "2021-04-28T21:15Z",
+      "Last_Modified_Date": "2021-05-05T19:39Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2015-3309",
+      "Description": "Directory traversal vulnerability in node/utils/Minify.js in Etherpad 1.1.2 through 1.5.4 allows remote attackers to read arbitrary files with permissions of the user running the service via a .. (dot dot) in the path parameter of HTTP API requests. NOTE: This vulnerability is due to an incomplete fix to CVE-2015-3297.",
+      "Published_Date": "2020-02-13T20:15Z",
+      "Last_Modified_Date": "2020-02-19T16:38Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2019-18209",
+      "Description": "templates/pad.html in Etherpad-Lite 1.7.5 has XSS when the browser does not encode the path of the URL, as demonstrated by Internet Explorer.",
+      "Published_Date": "2019-10-19T01:15Z",
+      "Last_Modified_Date": "2019-10-22T15:01Z",
+      "CVSS_Base_Score": 6.1,
+      "CVSS_Severity": "MEDIUM",
+      "CVSS_Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "Exploitability_Score": 2.8,
+      "Impact_Score": 2.7
+    },
+    {
+      "CVE_ID": "CVE-2018-6835",
+      "Description": "node/hooks/express/apicalls.js in Etherpad Lite before v1.6.3 mishandles JSONP, which allows remote attackers to bypass intended access restrictions.",
+      "Published_Date": "2018-02-08T07:29Z",
+      "Last_Modified_Date": "2019-10-03T00:03Z",
+      "CVSS_Base_Score": 9.8,
+      "CVSS_Severity": "CRITICAL",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 5.9
+    },
+    {
+      "CVE_ID": "CVE-2018-9327",
+      "Description": "Etherpad 1.5.x and 1.6.x before 1.6.4 allows an attacker to execute arbitrary code on the server. The instance has to be configured to use a document database (DirtyDB, CouchDB, MongoDB, or RethinkDB).",
+      "Published_Date": "2018-04-07T21:29Z",
+      "Last_Modified_Date": "2018-05-11T17:33Z",
+      "CVSS_Base_Score": 8.1,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "Exploitability_Score": 2.2,
+      "Impact_Score": 5.9
+    },
+    {
+      "CVE_ID": "CVE-2018-9325",
+      "Description": "Etherpad 1.5.x and 1.6.x before 1.6.4 allows an attacker to export all the existing pads of an instance without knowledge of pad names.",
+      "Published_Date": "2018-04-07T21:29Z",
+      "Last_Modified_Date": "2018-05-11T17:33Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2018-9326",
+      "Description": "Etherpad 1.6.3 before 1.6.4 allows an attacker to execute arbitrary code.",
+      "Published_Date": "2018-04-07T21:29Z",
+      "Last_Modified_Date": "2018-05-11T13:45Z",
+      "CVSS_Base_Score": 9.8,
+      "CVSS_Severity": "CRITICAL",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 5.9
+    },
+    {
+      "CVE_ID": "CVE-2015-2298",
+      "Description": "node/utils/ExportEtherpad.js in Etherpad 1.5.x before 1.5.2 might allow remote attackers to obtain sensitive information by leveraging an improper substring check when exporting a padID.",
+      "Published_Date": "2018-01-12T17:29Z",
+      "Last_Modified_Date": "2018-01-29T13:31Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2015-4085",
+      "Description": "Directory traversal vulnerability in node/hooks/express/tests.js in Etherpad frontend tests before 1.6.1.",
+      "Published_Date": "2017-09-07T20:29Z",
+      "Last_Modified_Date": "2017-09-18T16:54Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    },
+    {
+      "CVE_ID": "CVE-2015-3297",
+      "Description": "Directory traversal vulnerability in node/utils/Minify.js in Etherpad 1.1.1 through 1.5.2 allows remote attackers to read arbitrary files by leveraging replacement of backslashes with slashes in the path parameter of HTTP API requests.",
+      "Published_Date": "2017-07-07T16:29Z",
+      "Last_Modified_Date": "2017-07-14T13:16Z",
+      "CVSS_Base_Score": 7.5,
+      "CVSS_Severity": "HIGH",
+      "CVSS_Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "Exploitability_Score": 3.9,
+      "Impact_Score": 3.6
+    }
+  ]
+  
